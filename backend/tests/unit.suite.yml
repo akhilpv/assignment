@@ -1,0 +1,17 @@
+suite_namespace: backend\tests\unit
+actor: UnitTester
+modules:
+    enabled:
+      - Asserts
+      - Yii2:
+            part: [orm, email, fixtures]
+            
+      - Db:
+         dsn: 'mysql:host=localhost;dbname=nasher_publisher_app'
+         user: 'root'
+         password: 'root'
+         dump: 'tests/_data/dump.sql'
+         populate: false # run populator before all tests
+         cleanup: false # run populator before each test
+        #  populator: 'mysql -u $user -h $host $dbname < $dump'
+    
